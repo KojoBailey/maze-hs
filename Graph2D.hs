@@ -1,4 +1,4 @@
-module Graph2D (Graph2D(..), (Graph2D.!!)) where
+module Graph2D (Graph2D(..), Node2D(..), (Graph2D.!!)) where
 
 import GHC.Natural ( Natural )
 
@@ -10,5 +10,5 @@ data Node2D v = Node2D {
   getNode2DConnections :: [Index2D] }
 type Index2D = Maybe Coordinate2D
 
-(!!) :: Graph2D a -> Coordinate2D -> a
-(!!) graph (x, y) = getNode2DValue $ graph Prelude.!! fromIntegral y Prelude.!! fromIntegral x
+(!!) :: Graph2D a -> Coordinate2D -> Node2D a
+(!!) graph (x, y) = graph Prelude.!! fromIntegral y Prelude.!! fromIntegral x
